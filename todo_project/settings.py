@@ -26,9 +26,9 @@ if ENVIRONMENT == 'development':
 else :
     DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'to-do.railway.internal']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'to-do-list-production-ec83.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://to-do.railway.internal']
+CSRF_TRUSTED_ORIGINS = ['https://to-do-list-production-ec83.up.railway.app']
 
 # Application definition
 
