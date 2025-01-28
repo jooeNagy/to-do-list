@@ -28,8 +28,19 @@ else :
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'to-do-list-production-ec83.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://to-do-list-production-ec83.up.railway.app']
+CORS_ALLOWED_ORIGINS = [
+    'https://to-do-list-production-ec83.up.railway.app',
+    'http://localhost:3000',
+    'http://127.0.0.1:9000'
+]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://to-do-list-production-ec83.up.railway.app",
+    "http://localhost:3000",
+    "http://127.0.0.1:9000",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'todo',
     'rest_framework_simplejwt',
+    'corsheaders',
 ]
 
 REST_FRAMEWORK = {
@@ -54,6 +66,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'crosheaders.middleware.CorsMiddleware'
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
